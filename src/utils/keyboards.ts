@@ -5,7 +5,7 @@ const mainKeyboard = new Keyboard()
   .text('Kurslar haqida 📃')
   .row()
   .text('Lokatsiya 📍')
-  .text('Biz bilan bog\'lanish 📞')
+  .text("Biz bilan bog'lanish 📞")
   .row()
   .text('Takliflar 📝')
   .text('Chegirmalar 🟢')
@@ -22,10 +22,14 @@ const coursesKeyboard = new Keyboard()
   .row()
   .text('Ingliz tili 🇺🇸')
   .row()
+  .text('Bekor qilish!')
+  .resized()
   .oneTime();
 
+const cancel = new Keyboard().text('Bekor qilish!').resized().oneTime();
+
 const check = new InlineKeyboard()
-  .text('To\'g\'ri', 'true')
+  .text("To'g'ri", 'true')
   .text('Xato', 'false');
 
-export { check, coursesKeyboard, mainKeyboard };
+export { check, coursesKeyboard, mainKeyboard, cancel };

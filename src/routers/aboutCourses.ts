@@ -1,8 +1,13 @@
-import { bot } from '../core/index.ts';
-import { mainKeyboard } from '../utils/keyboards.ts';
+import { Router } from '../core/deps.ts';
+import { bot, MyContext } from '../core/bot.ts';
+import { coursesKeyboard } from '../utils/keyboards.ts'
 
-bot.hears('Backend ⚙️', (ctx) => {
-  ctx.reply(
+const router = new Router<MyContext>((ctx) => ctx.session.step);
+
+const aboutCourses = router.route('aboutCourses');
+
+aboutCourses.hears('Backend ⚙️', async ctx => {
+  await ctx.reply(
     `Java dasturlash tili va uning imkoniyatlari` +
       `\n` +
       `\n` +
@@ -70,6 +75,8 @@ bot.hears('Backend ⚙️', (ctx) => {
       `\n` +
       `\n` +
       `🔗 Kanal: https://t.me/itstation_group`,
-    { reply_markup: mainKeyboard },
+    { reply_markup: coursesKeyboard }
   );
-});
+})
+
+bot.use(router);

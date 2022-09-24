@@ -1,22 +1,14 @@
 import { bot } from '../core/index.ts';
-import { mainKeyboard } from '../utils/keyboards.ts';
+import { mainKeyboard, cancel } from '../utils/keyboards.ts';
 
-bot.command('start', (ctx) => {
+bot.command('start', async (ctx) => {
   const firstName = ctx.from!.first_name;
   const lastName = ctx.from?.last_name || '';
 
-  ctx.reply(
+  await ctx.reply(
     `<b>Assalom alaykum</b> ${
       firstName + ' ' + lastName
     }\nIT Station botiga Hush kelibsiz!`,
-    { parse_mode: 'HTML', reply_markup: mainKeyboard },
+    { parse_mode: 'HTML', reply_markup: mainKeyboard }
   );
-});
-
-bot.hears('Kursga yozilish 👨‍🎓', (ctx) => {
-  const courseType = ctx.session.courseType;
-
-  if (courseType) return ctx.reply('Siz kursga yozilib bo\'lgansiz');
-  ctx.reply('Ism Familiyangizni kiriting!\nMisol: Sayidulloh Abbasov');
-  ctx.session.step = 'admission';
 });

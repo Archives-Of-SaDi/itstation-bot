@@ -10,7 +10,8 @@ interface SessionData {
     | 'phoneNumber'
     | 'phoneNumber2'
     | 'courseType'
-    | 'check';
+    | 'check'
+    | 'feedback';
   name?: string;
   address?: string;
   phoneNumber?: string;
