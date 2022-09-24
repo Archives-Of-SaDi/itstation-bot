@@ -1,18 +1,18 @@
-import { Keyboard, InlineKeyboard} from '../core/deps.ts';
+import { InlineKeyboard, Keyboard } from '../core/deps.ts';
 
-const startKeyboard = new Keyboard()
+const mainKeyboard = new Keyboard()
   .text('Kursga yozilish 👨‍🎓')
   .text('Kurslar haqida 📃')
   .row()
   .text('Lokatsiya 📍')
-  .text("Biz bilan bog'lanish 📞")
+  .text('Biz bilan bog\'lanish 📞')
   .row()
   .text('Takliflar 📝')
   .text('Chegirmalar 🟢')
   .resized()
   .oneTime();
 
-const aboutCoursesKeyboard = new Keyboard()
+const coursesKeyboard = new Keyboard()
   .text('Kompyuter savodxonligi 🧑‍💻')
   .row()
   .text('Frontend 🖥')
@@ -24,9 +24,8 @@ const aboutCoursesKeyboard = new Keyboard()
   .row()
   .oneTime();
 
-
 const check = new InlineKeyboard()
   .text('To\'g\'ri', 'true')
-  .text('Xato', 'false')
+  .text('Xato', 'false');
 
-export { startKeyboard, aboutCoursesKeyboard, check };
+export { check, coursesKeyboard, mainKeyboard };

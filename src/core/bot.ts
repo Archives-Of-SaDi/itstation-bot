@@ -1,8 +1,16 @@
-import { Bot, Context, SessionFlavor, session } from '../core/deps.ts';
+import { Bot, Context, session, SessionFlavor } from '../core/deps.ts';
 import 'https://deno.land/x/dotenv@v3.2.0/load.ts';
 
 interface SessionData {
-  step: "start" | "admission" | "aboutCourses" | 'address' | 'phoneNumber' | 'phoneNumber2' | 'courseType' | 'check';
+  step:
+    | 'start'
+    | 'admission'
+    | 'aboutCourses'
+    | 'address'
+    | 'phoneNumber'
+    | 'phoneNumber2'
+    | 'courseType'
+    | 'check';
   name?: string;
   address?: string;
   phoneNumber?: string;
@@ -14,7 +22,7 @@ type MyContext = Context & SessionFlavor<SessionData>;
 
 const bot = new Bot<MyContext>(Deno.env.get('BOT_TOKEN')!);
 
-bot.use(session({ initial: (): SessionData => ({ step: "start" }) }));
+bot.use(session({ initial: (): SessionData => ({ step: 'start' }) }));
 bot.start();
 
 export { bot };
