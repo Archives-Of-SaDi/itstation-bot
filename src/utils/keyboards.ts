@@ -1,4 +1,4 @@
-import { Keyboard } from '../packages/index.ts';
+import { Keyboard, InlineKeyboard} from '../core/deps.ts';
 
 const startKeyboard = new Keyboard()
   .text('Kursga yozilish 👨‍🎓')
@@ -9,7 +9,8 @@ const startKeyboard = new Keyboard()
   .row()
   .text('Takliflar 📝')
   .text('Chegirmalar 🟢')
-  .resized();
+  .resized()
+  .oneTime();
 
 const aboutCoursesKeyboard = new Keyboard()
   .text('Kompyuter savodxonligi 🧑‍💻')
@@ -20,6 +21,12 @@ const aboutCoursesKeyboard = new Keyboard()
   .text('Android 📱')
   .row()
   .text('Ingliz tili 🇺🇸')
-  .row();
+  .row()
+  .oneTime();
 
-export { startKeyboard, aboutCoursesKeyboard };
+
+const check = new InlineKeyboard()
+  .text('To\'g\'ri', 'true')
+  .text('Xato', 'false')
+
+export { startKeyboard, aboutCoursesKeyboard, check };
