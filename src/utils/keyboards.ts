@@ -20,8 +20,6 @@ const coursesKeyboard = new Keyboard()
   .row()
   .text('Android 📱')
   .row()
-  .text('Ingliz tili 🇺🇸')
-  .row()
   .text('Bekor qilish!')
   .resized()
   .oneTime();
