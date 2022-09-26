@@ -28,8 +28,15 @@ const coursesKeyboard = new Keyboard()
 
 const cancel = new Keyboard().text('Bekor qilish!').resized().oneTime();
 
+const location = new Keyboard()
+  .requestLocation('Lokatsiyani yuborish')
+  .row()
+  .text('Bekor qilish!')
+  .oneTime()
+  .resized();
+
 const check = new InlineKeyboard()
   .text("To'g'ri", 'true')
   .text('Xato', 'false');
 
-export { check, coursesKeyboard, mainKeyboard, cancel };
+export { check, coursesKeyboard, mainKeyboard, cancel, location };

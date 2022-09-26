@@ -8,7 +8,7 @@ const admission = router.route('admission');
 admission.on('message:text', async (ctx) => {
   ctx.session.name = ctx.message.text;
   await ctx.reply(
-    "Yashash manzilingizni?\nMisol: Ozodlik MFY Sharq yulduz ko'chasi 37 uy",
+    "Yashash manzilingizni?\nMisol: Andijon shahar, Sharq yulduz ko'chasi",
     { reply_markup: cancel }
   );
   ctx.session.step = 'address';
