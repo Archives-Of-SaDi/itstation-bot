@@ -1,12 +1,12 @@
 import { Router } from '../core/deps.ts';
 import { bot, MyContext } from '../core/bot.ts';
-import { coursesKeyboard } from '../utils/keyboards.ts'
+import { coursesKeyboard } from '../utils/keyboards.ts';
 
 const router = new Router<MyContext>((ctx) => ctx.session.step);
 
 const aboutCourses = router.route('aboutCourses');
 
-aboutCourses.hears('Backend ⚙️', async ctx => {
+aboutCourses.hears('Backend ⚙️', async (ctx) => {
   await ctx.reply(
     `Java dasturlash tili va uning imkoniyatlari` +
       `\n` +
@@ -75,8 +75,42 @@ aboutCourses.hears('Backend ⚙️', async ctx => {
       `\n` +
       `\n` +
       `🔗 Kanal: https://t.me/itstation_group`,
-    { reply_markup: coursesKeyboard }
+    { reply_markup: coursesKeyboard, parse_mode: 'HTML' }
   );
-})
+});
+
+aboutCourses.hears('Frontend 🖥', async (ctx) => {
+  await ctx.reply(
+    `<b>Contents of Front-End Course!</b>\n` +
+      `Bu kursda siz web saytlarni foydalanuvchiga ko'rinadigan jamiyki qismlarini mustaqil qila oladigan darajada bo'lasiz, va kurs so'ngida portfolio va sertifikatga ega bo'lasiz ;)\n` +
+      `\n` +
+      `Websiteni inson ko'rinishida misol qilsak, inson suyagi bu HTML, inson ko'rinishi bu CSS endi inson xarakatlanishi esa JavaScript :)\n` +
+      `\n` +
+      `Va bularni onsonlashtirish, qulay qilish maqsadida kutubxona va frameworklarham mavjud\n` +
+      `\n` +
+      `Kurs mundarijasi:\n` +
+      `1-oy: HTML, CSS, Bootstrap\n` +
+      `  HTML - Basic Tags\n` +
+      `  CSS - Most Properties\n` +
+      `  Bootstrap - Full\n` +
+      `\n` +
+      `2-oy: JavaScript\n` +
+      `  JavaScript - Objects, Built-in Methods, OOP\n` +
+      `\n` +
+      `2-oy: React JS, Redux\n` +
+      `  React JS - hooks, components\n` +
+      `  Redux - Datas\n` +
+      `\n` +
+      `1-oy: Portfolio uchun amaliyot\n` +
+      `  Bir qancha full landing pagelar\n` +
+      `\n` +
+      `Kurs davomiyligi - <b>6 oy</b>\n` +
+      `Kurs narxi - <b>442 000 so'm/oy</b>\n` +
+      `Murojaat uchun: <b>+998932120011</b>\n` +
+      `\n` +
+      `Telegram: @itstation_admin1`,
+    { reply_markup: coursesKeyboard, parse_mode: 'HTML' }
+  );
+});
 
 bot.use(router);
