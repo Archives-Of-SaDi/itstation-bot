@@ -113,4 +113,33 @@ aboutCourses.hears('Frontend 🖥', async (ctx) => {
   );
 });
 
+aboutCourses.hears('Android 📱', async (ctx) => {
+  await ctx.reply(
+    `<b>Kurslarning davomiyligi qanday?</b>\n` +
+      `\n` +
+      `<b>Android dasturlashni kursi 9 oyga mo'ljallangan bo'lib, haftasiga to'rt marta, (yakshanba kuni qo'shimcha dars bonus)- haftaning toq yoki juft kunlari, ikki soatdan bo'lib o'tadi. Android Kurslari 6 moduldan iborat bo'ladi.</b>\n` +
+      `\n` +
+      `<b>1-Modul. Kotlin</b> Beginner:\n` +
+      `Birinchi modulda Kotlin Dasturlash tili boshlang'ich tushunchalar o'rgatiladi: Conversion Types, Math, Function, Massivlar...\n` +
+      `\n` +
+      `<b>2-Modul. Kotlin</b> Intermediate:\n` +
+      `Ikkinchi modulda Kotlinda classlar va obyektlar, Kotlinda kostruktorlar va getter, setterlar, Kotlinda vorislik, modifikatorlar, polimorfizm...\n` +
+      `\n` +
+      `<b>3-Modul. Kotlin</b> Advanced:\n` +
+      `Uchinchi modulda Kotlinda fayllar bilan ishlash, Kotlinda JSON, XML, CSV text formatlari. GSON kutubxonasi, Kotlin — Internet connections. Kotlinda API lar bilan ishlash, Networking. Sockets, Multithreading, Kotlinda saralash va qidirish algoritmlari...\n` +
+      `\n` +
+      `📱Dunyo aholisining 80% Android operatsion sistemadan foydalanadi.\n` +
+      `\n` +
+      `⏳ Kurs davomiyligi - <b>9 oy</b>\n` +
+      `\n` +
+      `💰 Kurs narxi - <b>442 000 so'm/oy</b>\n` +
+      `📞 Murojat uchun: <b>+998932120011</b>\n` +
+      `\n` +
+      `📝Telegram: <b>@itstation_admin1</b>\n` +
+      `\n` +
+      `🔗 Kanal: @ITStation_Group`,
+    { reply_markup: coursesKeyboard, parse_mode: 'HTML' }
+  );
+});
+
 bot.use(router);
