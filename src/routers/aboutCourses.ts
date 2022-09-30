@@ -142,7 +142,7 @@ aboutCourses.hears('Android 📱', async (ctx) => {
   );
 });
 
-aboutCourses.hears('Backend ⚙️', async (ctx) => {
+aboutCourses.hears('Kompyuter savodxonligi 🧑‍💻', async (ctx) => {
   await ctx.reply(
     `👨🏻‍💻 Komputer savodxonligida siz komputerni o'chirib yoqishdan boshlab Komputer qanday ishlashigacha o'rganasiz!\n` +
       `\n` +
