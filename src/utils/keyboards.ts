@@ -20,7 +20,7 @@ const coursesKeyboard = new Keyboard()
   .row()
   .text('Android 📱')
   .row()
-  .text('Bekor qilish!')
+  .text('Ortga qaytish 🔙')
   .resized()
   .oneTime();
 
@@ -29,7 +29,7 @@ const cancel = new Keyboard().text('Bekor qilish!').resized().oneTime();
 const location = new Keyboard()
   .requestLocation('Lokatsiyani yuborish')
   .row()
-  .text('Bekor qilish!')
+  .text('Ortga qaytish 🔙')
   .oneTime()
   .resized();
 

@@ -8,7 +8,7 @@ const admission = router.route('admission');
 admission.on('message:text', async (ctx) => {
   ctx.session.name = ctx.message.text;
   await ctx.reply(
-    "Yashash manzilingizni?\nMisol: Andijon shahar, Sharq yulduz ko'chasi",
+    "Yashash manzilingizni kiriting\nMisol: Andijon shahar, Sharq yulduz ko'chasi",
     { reply_markup: cancel }
   );
   ctx.session.step = 'address';
@@ -17,7 +17,7 @@ admission.on('message:text', async (ctx) => {
 const address = router.route('address');
 address.on('message:text', async (ctx) => {
   ctx.session.address = ctx.message.text;
-  await ctx.reply('Telefon raqam?\nMisol: +998935270123', {
+  await ctx.reply('Telefon raqamingizni kiriting\nMisol: +998935270123', {
     reply_markup: cancel,
   });
   ctx.session.step = 'phoneNumber';
@@ -26,7 +26,7 @@ address.on('message:text', async (ctx) => {
 const phoneNumber = router.route('phoneNumber');
 phoneNumber.on('message:text', async (ctx) => {
   ctx.session.phoneNumber = ctx.message.text;
-  await ctx.reply("Qo'shimcha telefon raqam?\nMisol: +998935270123", {
+  await ctx.reply("Qo'shimcha telefon raqamingizni kiriting\nMisol: +998935270123", {
     reply_markup: cancel,
   });
   ctx.session.step = 'phoneNumber2';

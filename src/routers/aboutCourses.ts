@@ -142,4 +142,34 @@ aboutCourses.hears('Android 📱', async (ctx) => {
   );
 });
 
+aboutCourses.hears('Backend ⚙️', async (ctx) => {
+  await ctx.reply(
+    `👨🏻‍💻 Komputer savodxonligida siz komputerni o'chirib yoqishdan boshlab Komputer qanday ishlashigacha o'rganasiz!\n` +
+      `\n` +
+      `🚀 Komputer Savodxonligi:\n` +
+      `<i>🔰Komputer interfeysi</i>\n` +
+      `<i>🔰Kompyuterni 0 dan boshlab o'rganish</i>\n` +
+      `<i>🔰operatsion sistemalar</i>\n` +
+      `<i>🔰Microsoft office dasturlari (Word, Excel,PowerPoint)</i>\n` +
+      `<i>🔰Internetdan foydalanish</i>\n` +
+      `<i>🔰Elektron pochta ochish va saytlardan unumli foydalanish. (Mail , Google)</i>\n` +
+      `<i>🔰Dasturlashga kirish(boshlang'ich tushunchalar)</i>\n` +
+      `\n` +
+      `✅ Dasturlashning ustuni bo'lgan komputer savodxonligini biz bilan tez, qulay va sifatli o'rganing!\n` +
+      `\n` +
+      `⏳ Komputer savodxonligi kursi haftada 4 kun 2 soatdan va 1 oy davom etadi\n` +
+      `\n` +
+      `💰 Kurs Narxi: 442.000 so'm/oy.\n` +
+      `\n` +
+      `🧾 Kursni muvaffaqiyatli tamomlagan o'quvchilar IT Station  sertifikati bilan taqdirlanadi\n` +
+      `\n` +
+      `☎️ Murojat uchun: +998932120011\n` +
+      `\n` +
+      `📝 Telegram:  @ITstation_admin\n` +
+      `\n` +
+      `🔗 Kanal: https://t.me/itstation_group`,
+    { reply_markup: coursesKeyboard, parse_mode: 'HTML' }
+  );
+});
+
 bot.use(router);
